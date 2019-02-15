@@ -1,0 +1,18 @@
+db;
+show collections;
+db.helloworld.insert ({_id: 1, towhom: 'charlie', message: 'Hello to you, Charlie!'});
+show collections;
+db.helloworld.insert ({_id: 2, towhom: 'Honey', message: 'Hello, Honey!'});
+db.helloworld.insert ({_id: 3, towhom: 'Clarice', message: 'Hello, Clare!'});
+db.helloworld.insert ({_id: 4, towhom: 'Clarice', message: {header: 'Message for Clare!', body: 'Hello, Clarice'}});
+db.helloworld.insert ({_id: 4, towhom: 'Clarice', message: {header: 'Message for Clare!', body: 'Hello, Clarice'}});
+db.helloworld.insert ({_id: 5, towhom: 'Clarice', message: ['Hello', 'Hi, Clare!', 'Happy Valetine!']});
+---------------------------
+find examples!!!
+---------------------------
+db.helloworld.find({_id: 4}, {_id: 0});
+db.helloworld.find({_id: 4});
+db.helloworld.find({_id: {$gt:3}}, {_id: 0});
+db.helloworld.find({_id: {$not {$gte:3}}}, {_id: 0});
+db.helloworld.find({towhom: 'charlie'}, {_id: 0});
+db.helloworld.find({towhom: 'Charlie'}, {_id: 0});
